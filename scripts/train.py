@@ -2,7 +2,7 @@
 """Train the U-Net laser-segmentation model.
 
 Example:
-    python train.py \\
+    python scripts/train.py \\
         --image-dir data/images --mask-dir data/masks \\
         --output-dir runs/highres_nonilluminated --test-name highres_nonilluminated
 """
@@ -10,7 +10,11 @@ Example:
 import argparse
 import json
 import os
+import sys
 import time
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import matplotlib
 

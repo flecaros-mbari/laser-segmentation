@@ -6,13 +6,17 @@ predictions, once for the HSV baseline), pointing --sheet-name at a
 different sheet each time; rows accumulate in the same workbook.
 
 Example:
-    python evaluate.py --mask-dir runs/highres/mola_predictions/mask \\
+    python scripts/evaluate.py --mask-dir runs/highres/mola_predictions/mask \\
         --predicted-dir runs/highres/mola_predictions/predicted_0.15 \\
         --output-xlsx runs/highres/results.xlsx --sheet-name "unet_0.15"
 """
 
 import argparse
 import os
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import pandas as pd
 

@@ -6,13 +6,17 @@ truth mask into the output directory (for later comparison with evaluate.py);
 omit it to just run inference (e.g. on unlabeled field data).
 
 Example:
-    python predict.py --model-path runs/highres/highres.pt \\
+    python scripts/predict.py --model-path runs/highres/highres.pt \\
         --image-dir data/mola_images --output-dir runs/highres/mola_predictions
 """
 
 import argparse
 import json
 import os
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import cv2
 import numpy as np
