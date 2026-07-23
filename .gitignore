@@ -3,3 +3,12 @@
 *.png
 *.jpeg
 *.tiff
+
+# Python
+__pycache__/
+*.pyc
+
+# Training runs / model weights / data
+runs/
+*.pt
+*.xlsx
